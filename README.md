@@ -2,6 +2,10 @@
 
 Campus Watch Dashboard
 
+## Access the Dash App
+
+You can access the deployed Dash app [here](https://campuswatch.azurewebsites.net/.). The app is compatible with both mobile and desktop devices.
+
 ## Purpose
 
 The Campus Watch Dashboard is a data visualization project designed to showcase the capabilities of Dash, a Python framework for building analytical web applications. It provides insights into crime incidents reported on a university campus, allowing users to explore and analyze the data interactively.
