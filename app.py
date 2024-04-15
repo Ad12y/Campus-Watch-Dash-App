@@ -16,6 +16,7 @@ df['Report Date'] = pd.to_datetime(df['Report Date'], format='%d/%m/%y %H%MHrs',
 
 # Create the Dash app
 dash_app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY], title="A Data-Driven Approach to Crime and Fire Safety at Rutgers University, New Brunswick")
+app = dash_app.server
 
 # Define the layout
 dash_app.layout = create_home_layout(df)
