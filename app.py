@@ -15,13 +15,13 @@ df = pd.read_csv("data/df_pdf_latlong.csv")
 df['Report Date'] = pd.to_datetime(df['Report Date'], format='%d/%m/%y %H%MHrs', errors='coerce')
 
 # Create the Dash app
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY], title="A Data-Driven Approach to Crime and Fire Safety at Rutgers University, New Brunswick")
+dash_app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY], title="A Data-Driven Approach to Crime and Fire Safety at Rutgers University, New Brunswick")
 
 # Define the layout
-app.layout = create_home_layout(df)
+dash_app.layout = create_home_layout(df)
 
 # Define callbacks
-@app.callback(
+@dash_app.callback(
     [Output('density-map', 'figure'),
      Output('top-crimes-chart', 'figure')],
     [Input('crime-type-dropdown', 'value'),
@@ -32,7 +32,7 @@ app.layout = create_home_layout(df)
 def update_figures_callback(crime_type, status, start_date, end_date):
     return update_figures(df, crime_type, status, start_date, end_date, mapbox_access_token)
 
-@app.callback(
+@dash_app.callback(
     Output('area-wise-crimes', 'children'),
     [Input('crime-type-dropdown', 'value'),
      Input('status-radio', 'value'),
