@@ -44,4 +44,4 @@ def display_data_summary_callback(crime_type, status, start_date, end_date):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    dash_app.run_server(debug=True)
