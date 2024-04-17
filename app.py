@@ -4,9 +4,10 @@ from layouts import create_home_layout
 from callbacks import update_figures, display_data_summary
 import dash_bootstrap_components as dbc
 import pandas as pd
+import os
 
 # Define your Mapbox access token
-mapbox_access_token = 'pk.eyJ1Ijoic2luZ2hhbDEyIiwiYSI6ImNrYjdzMGhzYzAyN3AyeG85bnQ0bWZoZjYifQ.qpQ8v1B5wLlXZLIsRLb78Q'
+mapbox_access_token = os.environ.get("MAPBOX_ACCESS_TOKEN")
 
 # Sample DataFrame
 df = pd.read_csv("data/df_pdf_latlong.csv")
