@@ -10,10 +10,9 @@ import os
 mapbox_access_token = os.environ.get("MAPBOX_ACCESS_TOKEN")
 
 # Sample DataFrame
-df = pd.read_csv("data/df_pdf_latlong.csv")
+df = pd.read_csv("data/final_data_wrangling.csv")
 
-# Convert the 'Report Date' column to datetime format
-df['Report Date'] = pd.to_datetime(df['Report Date'], format='%d/%m/%y %H%MHrs', errors='coerce')
+df['Report Date'] = pd.to_datetime(df['Report Date'], format='%m/%d/%Y')
 
 # Create the Dash app
 dash_app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY], title="A Data-Driven Approach to Crime and Fire Safety at Rutgers University, New Brunswick")

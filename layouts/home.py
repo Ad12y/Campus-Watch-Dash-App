@@ -67,7 +67,7 @@ def create_home_layout(df):
                                 id='date-picker',
                                 start_date=df['Report Date'].min(),
                                 end_date=df['Report Date'].max(),
-                                display_format='YYYY-MM-DD',
+                                display_format='MM-DD-YYYY',
                                 style={'width': '100%', 'color': '#FFFFFF', 'border': 'none', 'box-shadow': 'none', 'margin-bottom': '10px'}
                             )
                         ],style={'margin': '10px'}),
